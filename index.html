@@ -1,68 +1,97 @@
 <!DOCTYPE html><html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CHADGPT TOKEN</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Orbitron', sans-serif;
-        background: radial-gradient(ellipse at center, #0f0f0f 0%, #000000 100%);
-        color: #00ff88;
-        overflow-x: hidden;
-      }
-      .neon-text {
-        font-size: 2.8rem;
-        color: #00ff88;
-        text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 20px #00ff88;
-      }
-      .logo {
-        width: 180px;
-        animation: pulse 3s infinite;
-      }
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.07); }
-        100% { transform: scale(1); }
-      }
-      .container {
-        text-align: center;
-        padding-top: 5vh;
-      }
-      .rotating-text {
-        margin-top: 20px;
-        font-size: 1.5rem;
-        color: #ffffff;
-        height: 30px;
-        animation: neonText 2s ease-in-out infinite;
-      }
-      @keyframes neonText {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.4; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <img class="logo" src="./logo.png" alt="ChadGPT Logo" />
-      <h1 class="neon-text">CHADGPT TOKEN 💪</h1>
-      <div class="rotating-text" id="message">Más peso, más poder 💥</div>
-      <p style="margin-top: 20px; color: #aaa;">Token: <strong>$CHAD</strong> | Red: <strong>Binance Smart Chain</strong></p>
-      <p>Contrato: <span style="color:#ff0">0x... (aquí va tu contrato)</span></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHADGPT TOKEN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+      color: #00ff99;
+      overflow-x: hidden;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1601013323721-bf9fb7d70d3e');
+      background-size: cover;
+      background-position: center;
+      animation: pulseBG 10s infinite;
+    }
+    @keyframes pulseBG {
+      0%, 100% { filter: brightness(100%); }
+      50% { filter: brightness(120%); }
+    }
+    .logo {
+      width: 200px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-top: -10px;
+      text-shadow: 0 0 5px #00ff99;
+    }
+    .contract-box {
+      margin-top: 30px;
+      padding: 15px;
+      border: 2px solid #00ff99;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: fit-content;
+      border-radius: 8px;
+      animation: glowBox 4s infinite alternate;
+    }
+    @keyframes glowBox {
+      0% { box-shadow: 0 0 5px #00ff99; }
+      100% { box-shadow: 0 0 25px #00ff99; }
+    }
+    .ticker {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #000;
+      color: #00ff99;
+      padding: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .ticker span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: tickerMove 20s linear infinite;
+    }
+    @keyframes tickerMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img src="https://raw.githubusercontent.com/CHADGPTcoin/chadgpt-token-assets/main/logo.png" alt="CHADGPT Logo" class="logo">
+    <h1>CHADGPT TOKEN 💪</h1>
+    <div class="tagline">Neones, músculo y metaverso. Más reps, más peso, más poder.</div>
+    <div class="contract-box">
+      <p><strong>Token:</strong> $CHAD</p>
+      <p><strong>Red:</strong> Binance Smart Chain</p>
+      <p><strong>Contrato:</strong> <span id="contract">0x...tuContratoAquí</span></p>
     </div>
-    <script>
-      const frases = [
-        '¡Más peso, más poder 💥!',
-        '¡Una serie más, máquina!',
-        '¡Entrena como una bestia!',
-        '¡Neones, músculos y futuro!',
-        '¡Gimnasio en Marte activado 🪐!'
-      ];
-      let index = 0;
-      setInterval(() => {
-        document.getElementById('message').textContent = frases[index];
-        index = (index + 1) % frases.length;
-      }, 3000);
-    </script>
-  </body>
+  </div> <div class="ticker">
+    <span>🔥 ChadGPTToken ya disponible en PancakeSwap · 🥇 Únete al Telegram Oficial · 🚀 Haciendo más fuerza que la competencia · 👕 Merch en camino · 🛠️ Web en desarrollo futurista ·</span>
+  </div>
+</body>
 </html>
